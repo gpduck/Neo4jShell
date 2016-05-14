@@ -60,8 +60,10 @@ RequiredAssemblies = @('bin\Neo4j.Driver.dll')
 # Functions to export from this module
 FunctionsToExport = @(
   'Connect-Neo4jServer',
+  'Convert-NodeToType',
   'Invoke-CypherQuery',
-  'New-Node'
+  'New-Node',
+  'New-Relationship'
 )
 
 # Cmdlets to export from this module
