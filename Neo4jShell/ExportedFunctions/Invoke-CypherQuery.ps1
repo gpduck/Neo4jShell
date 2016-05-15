@@ -18,6 +18,7 @@ function Invoke-CypherQuery {
   if($Query) {
     $Statement = New-Object Neo4j.Driver.V1.Statement($Query, $StmtParameters)
   }
+  Write-Debug "Executing $($Statement.ToString())"
   Dispose { $Session = $Server.Session() } {
     $Session.Run($Statement)
   }
