@@ -61,6 +61,8 @@ RequiredAssemblies = @('bin\Neo4j.Driver.dll')
 FunctionsToExport = @(
   'Connect-Neo4jServer',
   'Convert-NodeToType',
+  'ConvertTo-Neo4jType',
+  'Get-ObjectProperties',
   'Invoke-CypherQuery',
   'New-Node',
   'New-Relationship'
