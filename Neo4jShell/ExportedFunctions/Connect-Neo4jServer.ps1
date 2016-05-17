@@ -1,4 +1,5 @@
 function Connect-Neo4jServer {
+  [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidGlobalVars", "")] #DefaultNeo4jServer
   param(
     [Parameter(Mandatory=$true)]
     [String]$ComputerName,

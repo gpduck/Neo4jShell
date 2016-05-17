@@ -1,4 +1,5 @@
 function Get-ObjectProperties {
+  [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseSingularNouns", "")]
   param(
     [Parameter(Mandatory=$true)]
     $InputObject

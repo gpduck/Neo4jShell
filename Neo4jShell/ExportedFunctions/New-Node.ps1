@@ -1,4 +1,5 @@
 function New-Node {
+  [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidGlobalVars", "")] #DefaultNeo4jServer
   param(
     [Parameter(Mandatory=$true,ValueFromPipeline=$true)]
     $InputObject,

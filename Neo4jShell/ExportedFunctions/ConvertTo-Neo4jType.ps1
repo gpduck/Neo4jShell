@@ -6,7 +6,7 @@ function ConvertTo-Neo4jType {
     $InputObject
   )
   process {
-    if($InputObject -eq $null) {
+    if($null -eq $InputObject) {
       return $null
     }
     switch($InputObject.GetType()) {

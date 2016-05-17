@@ -1,4 +1,5 @@
 function Convert-HashtableToParameters {
+  [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseSingularNouns", "")]
   param(
     [System.Collections.Hashtable]$Hashtable
   )
