@@ -62,6 +62,7 @@ FunctionsToExport = @(
   'Connect-Neo4jServer',
   'Convert-NodeToType',
   'ConvertTo-Neo4jType',
+  'Format-CypherProfile',
   'Get-ObjectProperties',
   'Invoke-CypherQuery',
   'New-Node',

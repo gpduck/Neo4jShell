@@ -1,4 +1,6 @@
 function Invoke-CypherQuery {
+  [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidGlobalVars", "")] #DefaultNeo4jServer
+  [CmdletBinding()]
   param(
     [Parameter(Mandatory=$true,ParameterSetName="StringQuery")]
     [String]$Query,
@@ -12,7 +14,9 @@ function Invoke-CypherQuery {
     [HashTable]$Parameters = @{},
     
     [ValidateNotNull()]
-    [Neo4j.Driver.V1.IDriver]$Server = $Global:DefaultNeo4jServer
+    [Neo4j.Driver.V1.IDriver]$Server = $Global:DefaultNeo4jServer,
+    
+    [Switch]$RawResult
   )
   $StmtParameters = Convert-HashtableToParameters $Parameters
   if($Query) {
@@ -20,6 +24,12 @@ function Invoke-CypherQuery {
   }
   Write-Debug "Executing $($Statement.ToString())"
   Dispose { $Session = $Server.Session() } {
-    $Session.Run($Statement)
+    $Result = $Session.Run($Statement) 
+    if($RawResult) {
+      #Wrap result in an array so powershell does not enumerate it.
+      $PSCmdlet.WriteObject($Result, $false)
+    } else {
+      $Result
+    }
   }
 }
