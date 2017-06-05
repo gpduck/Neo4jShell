@@ -1,5 +1,6 @@
 function New-Node {
   [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidGlobalVars", "")] #DefaultNeo4jServer
+  [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseShouldProcessForStateChangingFunctions", "")]
   param(
     [Parameter(Mandatory=$true,ValueFromPipeline=$true)]
     $InputObject,

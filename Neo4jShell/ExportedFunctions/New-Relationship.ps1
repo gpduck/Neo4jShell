@@ -1,5 +1,6 @@
 function New-Relationship {
   [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidGlobalVars", "")] #DefaultNeo4jServer
+  [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseShouldProcessForStateChangingFunctions", "")]
   param(
     [Parameter(Mandatory=$true)]
     [Neo4j.Driver.V1.INode]$StartNode,

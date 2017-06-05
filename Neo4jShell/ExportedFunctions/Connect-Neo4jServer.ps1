@@ -1,5 +1,6 @@
 function Connect-Neo4jServer {
-  [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidGlobalVars", "")] #DefaultNeo4jServer
+  [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidGlobalVars", "", Scope="Function", Target="*")] #DefaultNeo4jServer
+  [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseDeclaredVarsMoreThanAssignments", "", Scope="Function", Target="*")] #DefaultNeo4jServer
   param(
     [Parameter(Mandatory=$true)]
     [String]$ComputerName,

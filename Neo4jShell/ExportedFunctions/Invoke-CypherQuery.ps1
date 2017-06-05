@@ -1,5 +1,6 @@
 function Invoke-CypherQuery {
   [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidGlobalVars", "")] #DefaultNeo4jServer
+  [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseDeclaredVarsMoreThanAssignments", "", Scope="Function", Target="*")] #Session
   [CmdletBinding()]
   param(
     [Parameter(Mandatory=$true,ParameterSetName="StringQuery")]
